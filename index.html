@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="ui-mobile">
 
 <head>
     <meta charset="UTF-8">
@@ -12,15 +12,34 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- both links need -->
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(document).bind("contextmenu", function(e){
+                return false;
+            });
+        });
+    </script>
+    <style type="text/css">
+        #book img {
+            position: relative;
+            float: left;
+            display: block;
+            width: 100;
+            height: 150;
+            margin: 20px;
+            border: 1pt solid gray;
+        }
+    </style>
 </head>
 
-<body>
+<body class="ui-mobile-viewport ui-overlay-a">
 
     <!-- first page -->
-    <div data-role="page" id="home">
+    <div data-role="page" id="home" data-url="home"tabindex="0" class="ui-page ui-page-theme-a ui-page-active">
         <!-- header -->
-        <div data-role="header">
-            <h1> My Collection </h1>
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+            <h2 class="ui-title" role="heading" aria-level="1"> My Collection </h2>
         </div>
         <!-- header end -->
 
@@ -29,60 +48,59 @@
             <div class="ui-grid-b">
                 <div id="book" class="ui-block-a">
                     <a href="#Intro" class="ui-link">
-                        <img src="images/LastLeaf.jpeg">
+                        <img src="images/LastLeaf.png">
                     </a>
                 </div>
                 <div id="book" class="ui-block-b">
                     <a href="#Intro" class="ui-link">
-                        <img src="images/AnHour.jpeg">
+                        <img src="images/AnHour.png">
                     </a>
                 </div>
                 <div id="book" class="ui-block-c">
                     <a href="#Intro" class="ui-link">
-                        <img src="images/Sky.jpeg">
+                        <img src="images/Sky.png">
                     </a>
                 </div>
                 <!-- the first row end -->
                 <div id="book" class="ui-block-a">
                     <a href="#Intro" class="ui-link">
-                        <img src="images/TheNecklace.jpeg">
+                        <img src="images/TheNecklace.png">
                     </a>
                 </div>
                 <div id="book" class="ui-block-b">
                     <a href="#Intro" class="ui-link">
-                        <img src="images/Alchemist.jpeg">
+                        <img src="images/Alchemist.png">
                     </a>
                 </div>
                 <div id="book" class="ui-block-c">
                     <a href="#Intro" class="ui-link">
-                        <img src="images/Mountain.jpeg">
+                        <img src="images/Mountain.png">
                     </a>
                 </div>
                 <!-- second row end -->
                 <div id="book" class="ui-block-a">
                     <a href="#Intro" class="ui-link">
-                        <img src="images/Milk.jpeg">
+                        <img src="images/Milk.png">
                     </a>
                 </div>
                 <div id="book" class="ui-block-b">
                     <a href="#Intro" class="ui-link">
-                        <img src="images/WiseOtherwise.jpeg">
+                        <img src="images/WiseOtherwise.png">
                     </a>
                 </div>
                 <div id="book" class="ui-block-c">
                     <a href="#Intro" class="ui-link">
-                        <img src="images/Jury.jpeg">
+                        <img src="images/Jury.png">
                     </a>
                 </div>
                 <!-- The third row end -->
-
             </div>
             <!-- End of content -->
 
 
             <!-- footer -->
             <div data-role="footer" role="contentinfo" class="ui-footer ui-bar-inherit">
-                <h2 class="ui-title" role="heading" aria-levle="1">Design and Prepared by ML</h2>               
+                <h2 class="ui-title" role="heading" aria-levle="1">Design and Prepared by ML</h2>
             </div>
             <!-- End of Page 1 -->
             <!-- -------------------------------------------------------------- -->
@@ -95,10 +113,11 @@
                     <h2>The LAst Leaf</h2>
                     <h3>O. Henry</h3>
                     <p>
-                        (September 11, 1862 – June 5, 1910), known by his pen name O. Henry, was an American short story writer. His stories are known for their surprise endings.
+                        (September 11, 1862 – June 5, 1910), known by his pen name O. Henry, was an American short
+                        story writer. His stories are known for their surprise endings.
                     </p>
-                    <a href="#ch1" data-transition="" class="ui-btn">Start Reading Book</a>
-                    <a href="#home" data-transition="" class="ui-btn">My Collection</a>
+                    <a href="#ch1" data-transition="fade" class="ui-btn">Start Reading Book</a>
+                    <a href="#home" data-transition="pop" class="ui-btn">My Collection</a>
                 </div>
                 <div data-role="footer">
                     <h2>Design and Prepared by ML</h2>
@@ -115,27 +134,42 @@
                 <div data-role="main" class="ui-content">
                     <h2>Chapter 1</h2>
                     <p>
-                            In a little district west of Washington Square the streets have run crazy and broken themselves into small strips called "places." These "places" make strange angles and curves. One Street crosses itself a time or two. An artist once discovered a valuable possibility in this street. Suppose a collector with a bill for paints, paper and canvas should, in traversing this route, suddenly meet himself coming back, without a cent having been paid on account!
+                        In a little district west of Washington Square the streets have run crazy and broken themselves
+                        into small strips called "places." These "places" make strange angles and curves. One Street
+                        crosses itself a time or two. An artist once discovered a valuable possibility in this street.
+                        Suppose a collector with a bill for paints, paper and canvas should, in traversing this route,
+                        suddenly meet himself coming back, without a cent having been paid on account!
                     </p>
                     <p>
-                            So, to quaint old Greenwich Village the art people soon came prowling, hunting for north windows and eighteenth-century gables and Dutch attics and low rents. Then they imported some pewter mugs and a chafing dish or two from Sixth Avenue, and became a "colony."
+                        So, to quaint old Greenwich Village the art people soon came prowling, hunting for north
+                        windows and eighteenth-century gables and Dutch attics and low rents. Then they imported some
+                        pewter mugs and a chafing dish or two from Sixth Avenue, and became a "colony."
                     </p>
                     <p>
-                            At the top of a squatty, three-story brick Sue and Johnsy had their studio. "Johnsy" was familiar for Joanna. One was from Maine; the other from California. They had met at the table d'hôte of an Eighth Street "Delmonico's," and found their tastes in art, chicory salad and bishop sleeves so congenial that the joint studio resulted.
+                        At the top of a squatty, three-story brick Sue and Johnsy had their studio. "Johnsy" was
+                        familiar for Joanna. One was from Maine; the other from California. They had met at the table
+                        d'hôte of an Eighth Street "Delmonico's," and found their tastes in art, chicory salad and
+                        bishop sleeves so congenial that the joint studio resulted.
                     </p>
 
-                        <table style="width: 100%">
+                    <table style="width: 100%">
                         <tbody>
                             <tr style="width: 100%">
                                 <td style="width: 33%; text-align:left">
-                                <a href="#" class="ui-btn ui-icon-carat-l ui-corner-all ui-state-disabled ui-btn-icon-notext" data-transition="">Previous Chapter</a>
+                                    <a href="#" class="ui-btn ui-icon-carat-l ui-corner-all ui-state-disabled ui-btn-icon-notext"
+                                        data-transition="flip">Previous Chapter</a>
                                 </td>
                                 <td style="width: 33%; text-align:center">
-                                <a href="#" class="ui-btn ui-icon-home ui-corner-all ui-btn-icon-notext ui-btn-inline" data-transition="">Home</a>
+                                    <a href="#" class="ui-btn ui-icon-home ui-corner-all ui-btn-icon-notext ui-btn-inline"
+                                        data-transition="turn">Home</a>
+                                </td>
+                                <td style="width: 34%; text-align:right">
+                                    <a href="#ch2" class="ui-btn ui-icon-home ui-corner-all ui-btn-icon-notext ui-btn-inline"
+                                        data-transition="flow">Next Chapter</a>
                                 </td>
                             </tr>
                         </tbody>
-                        </table>
+                    </table>
                 </div>
                 <div dtat-role="footer">
                     <h2>Design and Prepared by ML</h2>
@@ -143,23 +177,72 @@
             </div>
 
             <!-- End of Page 3 -->
-            <div data-role="page" id="cha2" data-url="ch2">
+            <div data-role="page" id="ch2" data-url="ch2">
                 <div data-role="header">
                     <h1>My Book Reader</h1>
                 </div>
                 <div data-role="main" class="ui-content">
-                        <h2>Chapter 1</h2>
+                    <h2>Chapter 1</h2>
                     <p>
-                        
+                        .....
                     </p>
-
-
-
-
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr style="width: 100%">
+                                <td style="width: 33%; text-align:left">
+                                    <a href="#ch1" class="ui-btn ui-icon-carat-l ui-corner-all ui-state-disabled ui-btn-icon-notext"
+                                        data-transition="slidefade">Previous Chapter</a>
+                                </td>
+                                <td style="width: 33%; text-align:center">
+                                    <a href="#Intro" class="ui-btn ui-icon-home ui-corner-all ui-btn-icon-notext ui-btn-inline"
+                                        data-transition="slide">Home</a>
+                                </td>
+                                <td style="width: 34%; text-align:right">
+                                    <a href="#ch3" class="ui-btn ui-icon-home ui-corner-all ui-btn-icon-notext ui-btn-inline"
+                                        data-transition="slideup">Next Chapter</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-
+                <div data-role="footer">
+                    <h2>Design and Prepared by ML</h2>
+                </div>
             </div>
+            <!-- End of Page 4 -->
 
+            <div data-role="page" id="ch3" data-url="ch3">
+                <div data-role="header">
+                    <h1>My Book Reader</h1>
+                </div>
+                <div data-role="main" class="ui-content">
+                    <h2>Chapter 1</h2>
+                    <p>
+                        .....
+                    </p>
+                    <table style="width: 100%">
+                        <tbody>
+                            <tr style="width: 100%">
+                                <td style="width: 33%; text-align:left">
+                                    <a href="#ch2" class="ui-btn ui-icon-carat-l ui-corner-all ui-state-disabled ui-btn-icon-notext"
+                                        data-transition="slidedown">Previous Chapter</a>
+                                </td>
+                                <td style="width: 33%; text-align:center">
+                                    <a href="#Intro" class="ui-btn ui-icon-home ui-corner-all ui-btn-icon-notext ui-btn-inline"
+                                        data-transition="none">Home</a>
+                                </td>
+                                <td style="width: 34%; text-align:right">
+                                    <a href="#" class="ui-btn ui-icon-carat-l ui-corner-all ui-state-disabled ui-btn-icon-notext ui-btn-inline"
+                                        data-transition="turn">Next Chapter</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div data-role="footer">
+                    <h2>Design and Prepared by ML</h2>
+                </div>
+            </div>
 
 </body>
 
